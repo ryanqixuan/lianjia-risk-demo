@@ -1,0 +1,79 @@
+[
+  {
+    "broker_name": "张伟",
+    "store_name": "北京朝阳区门店",
+    "total_count": 2,
+    "high_count": 2.0,
+    "medium_count": 0.0
+  },
+  {
+    "broker_name": "王芳",
+    "store_name": "北京海淀区门店",
+    "total_count": 1,
+    "high_count": 1.0,
+    "medium_count": 0.0
+  },
+  {
+    "broker_name": "张伟,陈静",
+    "store_name": "上海浦东门店",
+    "total_count": 1,
+    "high_count": 1.0,
+    "medium_count": 0.0
+  },
+  {
+    "broker_name": "杨明",
+    "store_name": "上海浦东门店",
+    "total_count": 1,
+    "high_count": 1.0,
+    "medium_count": 0.0
+  },
+  {
+    "broker_name": "黄勇",
+    "store_name": "深圳南山门店",
+    "total_count": 1,
+    "high_count": 1.0,
+    "medium_count": 0.0
+  },
+  {
+    "broker_name": "李娜",
+    "store_name": "北京朝阳区门店",
+    "total_count": 2,
+    "high_count": 0.0,
+    "medium_count": 2.0
+  },
+  {
+    "broker_name": "刘洋",
+    "store_name": "北京海淀区门店",
+    "total_count": 1,
+    "high_count": 0.0,
+    "medium_count": 1.0
+  },
+  {
+    "broker_name": "赵婷",
+    "store_name": "深圳南山门店",
+    "total_count": 1,
+    "high_count": 0.0,
+    "medium_count": 1.0
+  },
+  {
+    "broker_name": "陈静",
+    "store_name": "上海浦东门店",
+    "total_count": 1,
+    "high_count": 0.0,
+    "medium_count": 1.0
+  },
+  {
+    "broker_name": "张伟,李娜,王芳",
+    "store_name": "北京海淀区门店",
+    "total_count": 1,
+    "high_count": 0.0,
+    "medium_count": 1.0
+  },
+  {
+    "broker_name": "刘洋,陈静",
+    "store_name": "上海浦东门店",
+    "total_count": 1,
+    "high_count": 0.0,
+    "medium_count": 1.0
+  }
+]

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>链家风控稽查规则引擎 Demo</title>
+    <title>链家风控稽查系统</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="stat-card" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                <div class="stat-card gray">
                     <div class="stat-number" id="storeCount">-</div>
                     <div class="stat-label">涉及门店</div>
                 </div>
@@ -49,8 +49,14 @@
             <div class="row align-items-center">
                 <div class="col-md-2">
                     <label class="form-label mb-0 me-2">大类:</label>
-                    <select class="form-select d-inline-block" id="categoryFilter" style="width: 160px;">
+                    <select class="form-select d-inline-block" id="categoryFilter" style="width: 140px;">
                         <option value="">全部大类</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label mb-0 me-2">次类:</label>
+                    <select class="form-select d-inline-block" id="subCategoryFilter" style="width: 140px;">
+                        <option value="">全部次类</option>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -59,6 +65,15 @@
                         <option value="">全部</option>
                         <option value="高危">高危</option>
                         <option value="需关注">需关注</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label mb-0 me-2">时间范围:</label>
+                    <select class="form-select d-inline-block" id="timeFilter" style="width: 120px;">
+                        <option value="">全部时间</option>
+                        <option value="week">本周</option>
+                        <option value="month">近一个月</option>
+                        <option value="half_year">近半年</option>
                     </select>
                 </div>
                 <div class="col-md-3 text-end">
@@ -83,10 +98,10 @@
                                     <th>大类</th>
                                     <th>次类</th>
                                     <th>规则名称</th>
-                                    <th>风险等级</th>
                                     <th>违规详情</th>
-                                    <th>门店</th>
-                                    <th>经纪人</th>
+                                    <th>风险等级</th>
+                                    <th>涉及人员</th>
+                                    <th>客户/房源</th>
                                     <th>预警时间</th>
                                 </tr>
                             </thead>
@@ -101,6 +116,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="scroll-hint" id="scrollHint"></div>
                 </div>
             </div>
 
@@ -108,9 +124,9 @@
             <div class="risk-overview-section">
                 <div class="card">
                     <div class="card-header">
-                        <span>📊 风险概览（按门店）</span>
+                        <span>📊 风险概览</span>
                     </div>
-                    <div class="card-body" id="storeRiskList">
+                    <div class="card-body" id="riskOverviewList">
                         <div class="text-center py-4">
                             <div class="spinner-border text-success" role="status">
                                 <span class="visually-hidden">加载中...</span>

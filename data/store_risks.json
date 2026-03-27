@@ -3,24 +3,24 @@
     "store_name": "北京朝阳区门店",
     "total_count": 4,
     "high_count": 2.0,
-    "attention_count": 2.0
+    "medium_count": 2.0
   },
   {
     "store_name": "上海浦东门店",
     "total_count": 4,
     "high_count": 2.0,
-    "attention_count": 2.0
+    "medium_count": 2.0
   },
   {
     "store_name": "北京海淀区门店",
     "total_count": 3,
     "high_count": 1.0,
-    "attention_count": 2.0
+    "medium_count": 2.0
   },
   {
     "store_name": "深圳南山门店",
     "total_count": 2,
     "high_count": 1.0,
-    "attention_count": 1.0
+    "medium_count": 1.0
   }
 ]
