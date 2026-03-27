@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链家风控稽查规则引擎 Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">🛡️ 链家风控稽查系统</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- 统计卡片 -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="stat-card high">
+                    <div class="stat-number" id="highCount">-</div>
+                    <div class="stat-label">高危预警</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card medium">
+                    <div class="stat-number" id="mediumCount">-</div>
+                    <div class="stat-label">需关注预警</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card total">
+                    <div class="stat-number" id="totalCount">-</div>
+                    <div class="stat-label">预警总数</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                    <div class="stat-number" id="storeCount">-</div>
+                    <div class="stat-label">涉及门店</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 筛选栏 -->
+        <div class="filter-bar">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <label class="form-label mb-0 me-2">大类:</label>
+                    <select class="form-select d-inline-block" id="categoryFilter" style="width: 160px;">
+                        <option value="">全部大类</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label mb-0 me-2">风险程度:</label>
+                    <select class="form-select d-inline-block" id="levelFilter" style="width: 100px;">
+                        <option value="">全部</option>
+                        <option value="高危">高危</option>
+                        <option value="需关注">需关注</option>
+                    </select>
+                </div>
+                <div class="col-md-3 text-end">
+                    <span class="text-muted">共 <strong id="filteredCount">0</strong> 条记录</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主体内容区 -->
+        <div class="content-wrapper">
+            <!-- 预警列表 -->
+            <div class="alert-table-section">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>📋 预警记录列表</span>
+                        <small class="text-muted">Demo 静态展示版</small>
+                    </div>
+                    <div class="card-body" id="alertTableWrapper">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>大类</th>
+                                    <th>次类</th>
+                                    <th>规则名称</th>
+                                    <th>风险等级</th>
+                                    <th>违规详情</th>
+                                    <th>门店</th>
+                                    <th>经纪人</th>
+                                    <th>预警时间</th>
+                                </tr>
+                            </thead>
+                            <tbody id="alertTable">
+                                <tr>
+                                    <td colspan="8" class="text-center py-4">
+                                        <div class="spinner-border text-success" role="status">
+                                            <span class="visually-hidden">加载中...</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 风险概览 -->
+            <div class="risk-overview-section">
+                <div class="card">
+                    <div class="card-header">
+                        <span>📊 风险概览（按门店）</span>
+                    </div>
+                    <div class="card-body" id="storeRiskList">
+                        <div class="text-center py-4">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">加载中...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
